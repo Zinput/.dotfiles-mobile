@@ -47,7 +47,7 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Pictures/wallpaperus04.jpg fill
+output * bg ~/Pictures/IMG_1272.JPEG fill
 #
 # Example configuration:
 #
@@ -268,3 +268,17 @@ bindsym $mod+o exec killall -SIGUSR1 waybar
 
 # tiling exceptions
 # for_window [app_id="com/.https://ultimaker.UltiMaker-Cura"] floating enable
+
+# backlight control
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
+# volume control
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# keyboard backlight control
+bindsym XF86KbdBrightnessUp exec asusctl -n
+bindsym XF86KbdBrightnessDown exec asusctl -p
+bindsym XF86Launch3 exec asusctl led-mode -n
