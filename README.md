@@ -8,10 +8,10 @@ yay -S ly sway swaybg alacritty waybar wofi xorg-xwayland xorg-xlsclients glfw-w
 
 Install Instructions:
 
-Step 1: Install Arch
-Step 2: Install yay or your preferred AUR tool
-Step 3: Install programs in prerequisites list
-Step 4: Clone this repository
-Step 5: Copy files into your home directory
+Step 1: Install Arch  
+Step 2: Install yay or your preferred AUR tool  
+Step 3: Install programs in prerequisites list  
+Step 4: Clone this repository  
+Step 5: Copy files into your home directory  
 
 Enjoy!
