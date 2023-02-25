@@ -29,8 +29,8 @@ usermod -aG video <user>
 ```
 
 Theming:  
-Open nwg-look to configure GTK theme  
-Edit the line starting with "output * bg" in ~/.config/sway/config with your preferred wallpaper
+Open nwg-look to configure GTK theme.  
+Edit the line starting with "output * bg" in ~/.config/sway/config with your preferred wallpaper.
 
 Screenshots:  
-Create a directory named Pictures in your home folder or edit sway config to change screenshot location 
+Create a directory named Pictures in your home folder or edit sway config to change screenshot location. 
