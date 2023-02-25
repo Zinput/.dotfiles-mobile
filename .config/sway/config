@@ -23,7 +23,9 @@ set $menu wofi --show drun
 # Opacity setting
 set $opacity 0.9
 
+#
 # Visual
+#
 gaps inner 8
 
 font pango: Iosevka 9
@@ -55,6 +57,7 @@ output * bg ~/Pictures/IMG_1272.JPEG fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output * adaptive_sync on
+# Remove the line below to disable fractional scaling
 output * scale 1.5
 
 ### Idle configuration
@@ -89,6 +92,14 @@ for_window [class="Google-chrome"] inhibit_idle fullscreen
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+
+#
+# Uncomment and delete input settings below to use generic config
+#input "type:touchpad" {
+#    natural_scroll enabled
+#    click_method clickfinger
+#}
+
 input "9610:54:Glorious_Model_O" {
     accel_profile flat
 }
@@ -284,12 +295,19 @@ bindsym $mod+o exec killall -SIGUSR1 waybar
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
-# volume control
+# volume and mic control
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # keyboard backlight control
 bindsym XF86KbdBrightnessUp exec asusctl -n
 bindsym XF86KbdBrightnessDown exec asusctl -p
 bindsym XF86Launch3 exec asusctl led-mode -n
+
+# save screenshot
+bindsym $mod+F6 exec grim ~/Pictures/$(date +'%m-%d-%Y-%I%M'.png)
+
+# screen mirroring (if this doesn't work, change eDP-2 to your display)
+bindsym $mod+F9 exec wl-mirror eDP-2
