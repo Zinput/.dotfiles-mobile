@@ -20,6 +20,10 @@ window#waybar {
 #pulseaudio,
 #disk,
 
+#power {
+  padding-left: 1rem;
+}
+
 #cpu {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -37,6 +41,7 @@ window#waybar {
 
 #idle_inhibitor {
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #workspaces {
