@@ -33,6 +33,9 @@ Enable important services:
 systemctl enable ly.service
 systemctl enable bluetooth.service
 systemctl enable cups.socket
+systemctl enable tlp.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
 ```
 
 Enable sudo-less backlight control:
