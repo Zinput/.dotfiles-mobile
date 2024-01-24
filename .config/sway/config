@@ -22,26 +22,22 @@ set $term alacritty
 set $menu wofi --show drun
 # Opacity setting
 set $opacity 0.9
+include catppuccin-mocha
 
-#
 # Visual
-#
 gaps inner 8
 
 font pango: Iosevka 9
 
 default_border pixel 2
 
-set $cl_high #962a54
-set $cl_indi #962a54
-set $cl_back #231f20
-set $cl_fore #962a54
-set $cl_urge #ee2e24
-
-client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
-client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+# target                 title     bg    text   indicator  border
+client.focused           $peach     $base $text  $peach $peach
+client.focused_inactive  $base    $base $text  $peach $base
+client.unfocused         $base    $base $text  $peach $base
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 # for_window [class=".*"] opacity $opacity
 # for_window [app_id=".*"] opacity $opacity
@@ -49,16 +45,15 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/IMG_1272.JPEG fill
+output * bg ~/Pictures/wallpaper.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output * adaptive_sync on
+# output * adaptive_sync on
 # Remove the line below to disable fractional scaling
-output * scale 1.5
 
 ### Idle configuration
 #
@@ -103,11 +98,7 @@ for_window [class="Google-chrome"] inhibit_idle fullscreen
 input "9610:54:Glorious_Model_O" {
     accel_profile flat
 }
-input "1267:12699:ASUE120A:00_04F3:319B_Touchpad" {
-    natural_scroll enabled
-    click_method clickfinger
-}
-input "2821:6582:Asus_Keyboard" {
+input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us
     xkb_variant colemak_dh
 }
@@ -284,6 +275,7 @@ xwayland enable
 # Autostart programs
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec udiskie --smart-tray
+exec nm-applet --indicator
 
 # kill waybar
 bindsym $mod+o exec killall -SIGUSR1 waybar
@@ -301,13 +293,9 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# keyboard backlight control
-bindsym XF86KbdBrightnessUp exec asusctl -n
-bindsym XF86KbdBrightnessDown exec asusctl -p
-bindsym XF86Launch3 exec asusctl led-mode -n
-
 # save screenshot
-bindsym $mod+F6 exec grim ~/Pictures/$(date +'%m-%d-%Y-%I%M'.png)
+# bindsym $mod+F6 exec grim ~/Pictures/$(date +'%m-%d-%Y-%I%M'.png)
+bindsym $mod+p exec grimshot save active
 
 # screen mirroring (if this doesn't work, change eDP-2 to your display)
 bindsym $mod+F9 exec wl-mirror eDP-2
