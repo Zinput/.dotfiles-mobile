@@ -20,7 +20,7 @@ MAKEFLAGS="-j$(nproc)"
 
 Prerequisites:
 ```
-yay -S ly sway swaybg swayidle swaylock alacritty waybar wofi xorg-xwayland xorg-xlsclients glfw-wayland polkit-gnome qt5-wayland qt5ct snapper snap-pac ttf-font-awesome ttf-iosevka ttf-iosevka-nerd ttf-liberation udiskie neovim thunar thunar-volman thunar-archive-plugin unzip zathura zathura-pdf-mupdf gzip gvfs gvfs-mtp bluez bluez-utils blueberry appimagelauncher android-udev imv mpv neofetch wl-clipboard wl-mirror gnome-bluetooth-3.0 cups cups-pdf catppuccin-gtk-theme-mocha exfat-utils file-roller grim grimshot htop lldb llvm mako man-db nodejs npm python python-pip tree-sitter-cli system-config-printer grub-btrfs inotify-tools snap-pac 
+yay -S ly sway swaybg swayidle swaylock alacritty waybar wofi xorg-xwayland xorg-xlsclients glfw-wayland polkit-gnome qt5-wayland qt5ct snapper snap-pac ttf-font-awesome ttf-iosevka ttf-iosevka-nerd ttf-liberation udiskie neovim thunar thunar-volman thunar-archive-plugin unzip zathura zathura-pdf-mupdf gzip gvfs gvfs-mtp bluez bluez-utils blueberry appimagelauncher android-udev imv mpv neofetch wl-clipboard wl-mirror gnome-bluetooth-3.0 cups cups-pdf catppuccin-gtk-theme-mocha exfat-utils file-roller grim grimshot htop lldb llvm mako man-db nodejs npm python python-pip tree-sitter-cli system-config-printer grub-btrfs inotify-tools
 ```
 
 Laptop specific prerequisites:
